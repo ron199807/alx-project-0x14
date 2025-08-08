@@ -1,28 +1,14 @@
 const Loading: React.FC = () => {
   return (
-    <div className="loading">
-      <div className="spinner"></div>
-      <style jsx>{`
-        .loading {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-        .spinner {
-          border: 4px solid rgba(0, 0, 0, 0.1);
-          border-left-color: #000;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 flex flex-col justify-center items-center">
+        <h1 className="text-4xl md:text-6xl font-semibold text-white mb-4 animate-pulse">
+          Loading...
+        </h1>
+        <p className="text-lg text-gray-300">Please wait, we&apos;re getting next set of movies ready for you.</p>
+      </div>
     </div>
   );
-}
+};
+
+export default Loading;
